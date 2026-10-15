@@ -8,6 +8,7 @@
 - لندینگ شاگرد: https://cybex7.github.io/yoga-wireframe/StudentLanding.html
 - داشبورد مربی: https://cybex7.github.io/yoga-wireframe/CoachDashboard.html
 - فرم نظرسنجی مربی‌ها: https://cybex7.github.io/yoga-wireframe/survey.html
+- پیام اول و سوال‌های دایرکت اینستاگرام برای مربی‌ها: [coach-interview-dm.md](coach-interview-dm.md)
 
 همه‌ی صفحه‌ها موبایل (۳۹۰×۸۴۴) و راست‌چین‌اند. ظاهر عمداً خاکستری است؛ نارنجی فقط برای هشدارها (ریزش شاگرد، ملاحظه‌ی پزشکی) به کار رفته. عددها، اسم‌ها و قیمت‌ها نمونه‌اند و جاهایی که باید پر شوند داخل کروشه آمده‌اند، مثل `[قیمت ترم]`.
 
