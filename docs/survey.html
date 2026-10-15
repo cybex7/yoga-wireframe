@@ -34,21 +34,21 @@ button:disabled{background:#8f959b;cursor:default}
 </head>
 <body>
 <main>
-  <a href="index.html" style="font-size:14px;color:#1f5f8b">دیدن نمونه‌ی اولیه</a>
-  <h1>چند سوال از مربی‌های یوگا</h1>
-  <p>داریم ابزاری می‌سازیم که کارهای فروش و پیگیری شاگرد را از دوش مربی بردارد. قبلش می‌خواهیم بدانیم کار شما الان چطور می‌چرخد. چیزی نمی‌فروشیم و اطلاعاتتان فقط دست تیم ما می‌ماند.</p>
+  <a href="index.html" style="font-size:14px;color:#1f5f8b">مشاهده‌ی نمونه‌ی اولیه</a>
+  <h1>چند سوال کوتاه از مربی‌های یوگا</h1>
+  <p>داریم ابزاری می‌سازیم که کارهای فروش و پیگیری شاگرد را از دوش مربی بردارد. قبلش می‌خواهیم بدانیم کار شما الان چطور می‌چرخد. چیزی نمی‌فروشیم و اطلاعات شما فقط پیش تیم ما می‌ماند.</p>
 
   <form id="survey" novalidate>
     <fieldset>
       <legend>آشنایی</legend>
-      <label class="f"><span>اسم <span class="req" aria-hidden="true">*</span></span><input type="text" name="name" required autocomplete="name"></label>
-      <label class="f"><span>شماره‌ی موبایل <span class="req" aria-hidden="true">*</span></span><input type="tel" name="phone" required inputmode="tel" autocomplete="tel" class="ltr" placeholder="09xx xxx xxxx"></label>
+      <label class="f"><span>نام و نام خانوادگی <span class="req" aria-hidden="true">*</span></span><input type="text" name="name" required autocomplete="name"></label>
+      <label class="f"><span>شماره موبایل <span class="req" aria-hidden="true">*</span></span><input type="tel" name="phone" required inputmode="tel" autocomplete="tel" class="ltr" placeholder="09xx xxx xxxx"></label>
       <label class="f"><span>آیدی پیج اینستاگرام <span class="req" aria-hidden="true">*</span></span><input type="text" name="instagram" required class="ltr" placeholder="@" autocapitalize="off" spellcheck="false"></label>
       <label class="f">شهر<input type="text" name="city" autocomplete="address-level2"></label>
     </fieldset>
 
     <fieldset>
-      <legend>۱. الان کلاس‌هایت چه شکلی است؟ <span class="hint">هر چند مورد که هست</span></legend>
+      <legend>۱. کلاس‌های شما در حال حاضر به چه شکلی برگزار می‌شود؟ <span class="hint">هر چند مورد که با کار شما مطابقت دارد</span></legend>
       <label class="opt"><input type="checkbox" name="teaching" value="حضوری">حضوری</label>
       <label class="opt"><input type="checkbox" name="teaching" value="آنلاین لایو">آنلاین لایو</label>
       <label class="opt"><input type="checkbox" name="teaching" value="ویدیوی ضبط‌شده">ویدیوی ضبط‌شده</label>
@@ -56,50 +56,50 @@ button:disabled{background:#8f959b;cursor:default}
     </fieldset>
 
     <fieldset>
-      <legend>۲. شاگردهایت بیشتر با چه هدفی می‌آیند؟ <span class="hint">حداکثر سه مورد</span></legend>
+      <legend>۲. شاگردان شما بیشتر با چه هدفی در کلاس‌ها شرکت می‌کنند؟ <span class="hint">حداکثر سه مورد را انتخاب کنید</span></legend>
       <label class="opt"><input type="checkbox" name="needs" value="اصلاح فرم بدن">اصلاح فرم بدن (قوز، گودی کمر)</label>
       <label class="opt"><input type="checkbox" name="needs" value="قدرت و استقامت">قدرت و استقامت</label>
       <label class="opt"><input type="checkbox" name="needs" value="عضله‌سازی و فرم‌دهی">عضله‌سازی و فرم‌دهی</label>
       <label class="opt"><input type="checkbox" name="needs" value="آرامش و استرس">آرامش و کاهش استرس</label>
       <label class="opt"><input type="checkbox" name="needs" value="انعطاف و کشش">انعطاف و کشش</label>
-      <label class="opt"><input type="checkbox" name="needs" value="کمر و گردن">کمردرد و گردن‌درد</label>
-      <label class="f">چیز دیگر<input type="text" name="needs_other"></label>
+      <label class="opt"><input type="checkbox" name="needs" value="کمر و گردن">بهبود کمردرد و گردن‌درد</label>
+      <label class="f">موارد دیگر<input type="text" name="needs_other"></label>
     </fieldset>
 
     <fieldset>
-      <legend>۳. پول کلاس آنلاین را معمولاً چطور می‌گیری؟</legend>
+      <legend>۳. هزینه‌ی کلاس‌های آنلاین را معمولاً به چه روشی دریافت می‌کنید؟</legend>
       <label class="opt"><input type="radio" name="payment" value="کارت‌به‌کارت">کارت‌به‌کارت</label>
-      <label class="opt"><input type="radio" name="payment" value="درگاه یا سایت خودم">درگاه یا سایت خودم</label>
-      <label class="opt"><input type="radio" name="payment" value="پلتفرم دیگر">از طریق یک پلتفرم دیگر</label>
-      <label class="opt"><input type="radio" name="payment" value="آنلاین نمی‌فروشم">آنلاین نمی‌فروشم</label>
+      <label class="opt"><input type="radio" name="payment" value="درگاه یا سایت خودم">درگاه یا سایت شخصی</label>
+      <label class="opt"><input type="radio" name="payment" value="پلتفرم دیگر">از طریق پلتفرم‌های دیگر</label>
+      <label class="opt"><input type="radio" name="payment" value="آنلاین نمی‌فروشم">کلاس آنلاین ندارم</label>
     </fieldset>
 
     <fieldset>
-      <legend><label for="pain">۴. در فروش و برگزاری کلاس آنلاین، کدام قسمت بیشتر از همه اذیتت می‌کند یا وقتت را می‌گیرد؟</label></legend>
-      <textarea id="pain" name="pain" placeholder="مثلاً چک کردن رسیدها، فرستادن لینک، جواب دادن به دایرکت‌ها…"></textarea>
+      <legend><label for="pain">۴. در فرآیند فروش و برگزاری کلاس آنلاین، کدام بخش بیشتر شما را خسته می‌کند یا وقتتان را می‌گیرد؟</label></legend>
+      <textarea id="pain" name="pain" placeholder="مثلاً چک کردن رسیدها، ارسال لینک، پاسخ به دایرکت‌ها و…"></textarea>
     </fieldset>
 
     <fieldset>
-      <legend><label for="completion">۵. از ده نفری که یک ترم را شروع می‌کنند، چند نفر تا آخرش واقعاً تمرین می‌کنند؟</label></legend>
+      <legend><label for="completion">۵. از میان ده نفری که یک ترم را شروع می‌کنند، معمولاً چند نفر واقعاً تا انتهای ترم تمرین می‌کنند؟</label></legend>
       <select id="completion" name="completion">
-        <option value="">انتخاب کن</option>
+        <option value="">انتخاب کنید</option>
         <option>کمتر از ۳ نفر</option>
         <option>۳ تا ۵ نفر</option>
         <option>۵ تا ۷ نفر</option>
         <option>بیشتر از ۷ نفر</option>
-        <option>نمی‌دانم</option>
+        <option>دقیق نمی‌دانم</option>
       </select>
     </fieldset>
 
     <fieldset>
-      <legend><label for="medical">۶. شاگرد با مشکل جسمی (دیسک، بارداری، فشار خون…) داشته‌ای؟ از کجا خبردار شدی و چه کردی؟</label></legend>
+      <legend><label for="medical">۶. تا به حال شاگردی با شرایط خاص جسمی (مثل دیسک، بارداری یا فشار خون) داشته‌اید؟ چطور مطلع شدید و چه اقدامی کردید؟</label></legend>
       <textarea id="medical" name="medical"></textarea>
     </fieldset>
 
     <fieldset>
-      <legend><label for="dm_time">۷. روزی چقدر وقتت پای جواب دادن به پیام شاگردها می‌رود؟</label></legend>
+      <legend><label for="dm_time">۷. روزانه چقدر از وقت شما صرف پاسخگویی به پیام‌های شاگردان می‌شود؟</label></legend>
       <select id="dm_time" name="dm_time">
-        <option value="">انتخاب کن</option>
+        <option value="">انتخاب کنید</option>
         <option>کمتر از ۱۵ دقیقه</option>
         <option>۱۵ تا ۴۵ دقیقه</option>
         <option>۴۵ دقیقه تا ۲ ساعت</option>
@@ -108,22 +108,22 @@ button:disabled{background:#8f959b;cursor:default}
     </fieldset>
 
     <fieldset>
-      <legend><label for="tools">۸. الان برای چه ابزار یا کسی پول می‌دهی؟</label> <span class="hint">اسکای‌روم، سایت، ادمین، فیلمبردار…</span></legend>
+      <legend><label for="tools">۸. در حال حاضر برای چه ابزار یا خدماتی هزینه پرداخت می‌کنید؟</label> <span class="hint">مانند اسکای‌روم، طراحی سایت، ادمین، فیلمبردار و…</span></legend>
       <input id="tools" type="text" name="tools">
     </fieldset>
 
     <fieldset>
-      <legend>۹. حاضری یک تماس ۲۰ دقیقه‌ای داشته باشیم که نمونه را نشانت بدهیم؟</legend>
-      <label class="opt"><input type="radio" name="call" value="بله">بله</label>
+      <legend>۹. تمایل دارید در یک تماس ۲۰ دقیقه‌ای، نمونه‌ی اولیه‌ی ابزار را به شما نشان دهیم؟</legend>
+      <label class="opt"><input type="radio" name="call" value="بله">بله، با کمال میل</label>
       <label class="opt"><input type="radio" name="call" value="شاید بعداً">شاید بعداً</label>
-      <label class="opt"><input type="radio" name="call" value="نه">نه</label>
-      <label class="f">بهترین زمان برای تماس<input type="text" name="call_time" placeholder="مثلاً عصرهای شنبه"></label>
+      <label class="opt"><input type="radio" name="call" value="نه">خیر</label>
+      <label class="f">ترجیح می‌دهید چه زمانی با شما تماس بگیریم؟<input type="text" name="call_time" placeholder="مثلاً عصرهای شنبه"></label>
     </fieldset>
 
     <div class="hp" aria-hidden="true"><label>وبسایت<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
     <div id="msg" class="msg" role="status" aria-live="polite"></div>
-    <button type="submit" id="send">ارسال</button>
+    <button type="submit" id="send">ثبت پاسخ‌ها</button>
   </form>
 </main>
 <script>
@@ -147,7 +147,7 @@ var ENDPOINT = '';
     var phone = form.phone.value.trim();
     var ig = form.instagram.value.trim();
     if (!name || !phone || !ig) {
-      show('err', 'لطفاً اسم، شماره‌ی موبایل و آیدی پیج را وارد کن.');
+      show('err', 'لطفاً نام، شماره موبایل و آیدی پیج را وارد کنید.');
       return;
     }
     if (!ENDPOINT) {
@@ -162,12 +162,12 @@ var ENDPOINT = '';
         form.style.display = 'none';
         msg.parentNode.removeChild(msg);
         form.parentNode.appendChild(msg);
-        show('ok', 'ممنون! جوابت ثبت شد. اگر تماس را قبول کرده باشی، به‌زودی پیام می‌دهیم.');
+        show('ok', 'ممنون از وقتی که گذاشتید، پاسختان ثبت شد. اگر تمایل به گفتگو داشتید، به‌زودی برای هماهنگی پیام می‌دهیم.');
       })
       .catch(function () {
         btn.disabled = false;
-        btn.textContent = 'ارسال';
-        show('err', 'ارسال نشد. اینترنت را چک کن و دوباره بزن.');
+        btn.textContent = 'ثبت پاسخ‌ها';
+        show('err', 'ارسال انجام نشد. لطفاً اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.');
       });
   });
 })();
