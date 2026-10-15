@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>ساخت ترم جدید</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1f5f8b}a:hover{color:#174a6c}
+.scr{width:390px;height:844px;box-sizing:border-box;background:#f3f4f5;font-family:Vazirmatn,Tahoma,sans-serif;color:#1d2125;direction:rtl;display:flex;flex-direction:column;overflow:hidden}
+.top{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 16px;background:#fff;border-bottom:1px solid #d4d7db}
+.top h1{margin:0;font-size:17px;font-weight:700}
+.body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+.card{background:#fff;border:1px solid #d4d7db;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.card h2{margin:0;font-size:15px;font-weight:700}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;padding:0 16px;border-radius:10px;background:#1d2125;color:#fff;text-decoration:none;font-weight:700;font-size:15px;border:0;font-family:inherit;cursor:pointer;flex-shrink:0}
+.btn:hover{color:#fff;background:#3a4047}
+.btn2{display:flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:0 12px;border-radius:8px;background:#fff;color:#1d2125;text-decoration:none;font-weight:500;font-size:13px;border:1px solid #9aa0a6;font-family:inherit;cursor:pointer}
+.btn2:hover{color:#1d2125;background:#eceef0}
+.muted{color:#5b6167;font-size:13px;margin:0;line-height:1.7}
+.tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;background:#e9ebed;font-size:12px;color:#3c4043;white-space:nowrap}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.f{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+.f label{font-size:13px;color:#3c4043;font-weight:500}
+.f input{height:44px;box-sizing:border-box;border:1px solid #b4b9bf;border-radius:8px;padding:0 12px;font-family:inherit;font-size:14px;background:#fff;width:100%}
+.f input::placeholder{color:#3c4043}
+.seg{display:flex;border:1px solid #b4b9bf;border-radius:8px;overflow:hidden}
+.seg span{flex:1;text-align:center;padding:10px 0;font-size:13px;border-left:1px solid #b4b9bf}
+.seg span:last-child{border-left:0}
+.seg .on{background:#1d2125;color:#fff;font-weight:700}
+.ses{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #e4e6e9}
+.num{width:28px;height:28px;border-radius:50%;background:#e9ebed;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.tabs{height:64px;flex-shrink:0;background:#fff;border-top:1px solid #d4d7db;display:flex}
+.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;color:#6b7177;text-decoration:none}
+.tabs a:hover{color:#1d2125}
+.tabs a.on{color:#1d2125;font-weight:700}
+</style>
+</helmet>
+<div class="scr">
+  <div class="top">
+    <a href="Main.dc.html" style="font-size: 14px; text-decoration: none">بازگشت</a>
+    <h1>ترم جدید</h1>
+    <span style="width: 44px"></span>
+  </div>
+  <div class="body">
+    <div class="card">
+      <div class="f"><label for="t-name">نام ترم</label><input id="t-name" placeholder="یوگای پایه — پاییز"></div>
+      <div class="row">
+        <div class="f"><label for="t-count">تعداد جلسه</label><input id="t-count" placeholder="۸"></div>
+        <div class="f"><label for="t-week">جلسه در هفته</label><input id="t-week" placeholder="۲"></div>
+      </div>
+      <div class="row">
+        <div class="f"><label for="t-start">تاریخ شروع</label><input id="t-start" placeholder="۱ آبان"></div>
+        <div class="f"><label for="t-cap">ظرفیت</label><input id="t-cap" placeholder="۲۵ نفر"></div>
+      </div>
+      <div class="f"><label for="t-price">قیمت کل ترم (تومان)</label><input id="t-price" placeholder="[قیمت ترم]"></div>
+      <div class="f">
+        <label>نوع برگزاری</label>
+        <div class="seg"><span class="on">ویدیویی</span><span>زنده (لینک)</span><span>ترکیبی</span></div>
+      </div>
+    </div>
+
+    <div class="card" style="gap: 0">
+      <div class="row" style="padding-bottom: 8px"><h2>جلسه‌ها</h2><span class="muted">۲ از ۸ آماده</span></div>
+      <div class="ses">
+        <span class="num">۱</span>
+        <div style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 14px">آشنایی با تنفس</span><span class="muted">۳۰ دقیقه · ویدیو آماده</span></div>
+        <span class="tag">آماده</span>
+      </div>
+      <div class="ses">
+        <span class="num">۲</span>
+        <div style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 14px">سگ رو به پایین و کشش پشت</span><span class="muted">۳۵ دقیقه · ویدیو آماده</span></div>
+        <span class="tag">آماده</span>
+      </div>
+      <div class="ses">
+        <span class="num">۳</span>
+        <div style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 14px">تعادل و ستون فقرات</span><span class="muted">شرط عبور: ۶۰ ثانیه در حرکت درخت</span></div>
+        <a class="btn2" href="CoachUpload.dc.html">آپلود</a>
+      </div>
+      <div class="ses">
+        <span class="num">۴</span>
+        <div style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 14px; color: #6b7177">[عنوان جلسه]</span></div>
+        <a class="btn2" href="CoachUpload.dc.html">آپلود</a>
+      </div>
+    </div>
+
+    <a class="btn" href="Main.dc.html">ذخیره و گرفتن لینک فروش</a>
+    <p class="muted" style="text-align: center">لینک را در بیو اینستاگرام یا کانال تلگرامت بگذار.</p>
+  </div>
+  <nav class="tabs" aria-label="منوی مربی">
+    <a href="Main.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>داشبورد</a>
+    <a class="on" href="CoachTerm.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>ترم‌ها</a>
+    <a href="CoachStudents.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 11a3 3 0 1 0 0-6M22 21c0-3-2-5-5-5"></path></svg>شاگردها</a>
+    <a href="CoachQuestions.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg>سوال‌ها</a>
+    <a href="CoachPayouts.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"></rect><path d="M3 10h18M16 15h2"></path></svg>درآمد</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

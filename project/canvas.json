@@ -1,0 +1,19 @@
+{"v":3,"createdOnFiles":{"v":1,"at":"2026-10-15T10:00:00Z"},"title":"وایرفریم چکاوک یوگا","launch":{"view":"canvas"},"pages":[],"boards":{
+"Main.dc.html":{"x":2350,"y":0,"w":390,"h":844,"title":"مربی ۱ · داشبورد","is_interactive":true,"radius":28},
+"CoachTerm.dc.html":{"x":1880,"y":0,"w":390,"h":844,"title":"مربی ۲ · ساخت ترم","is_interactive":true,"radius":28},
+"CoachUpload.dc.html":{"x":1410,"y":0,"w":390,"h":844,"title":"مربی ۳ · آپلود جلسه و تگ حرکات","is_interactive":true,"radius":28},
+"CoachStudents.dc.html":{"x":940,"y":0,"w":390,"h":844,"title":"مربی ۴ · شاگردها و حضور","is_interactive":true,"radius":28},
+"CoachQuestions.dc.html":{"x":470,"y":0,"w":390,"h":844,"title":"مربی ۵ · صف سوال","is_interactive":true,"radius":28},
+"CoachPayouts.dc.html":{"x":0,"y":0,"w":390,"h":844,"title":"مربی ۶ · درآمد و تسویه","is_interactive":true,"radius":28},
+"StudentLanding.dc.html":{"x":2820,"y":1264,"w":390,"h":844,"title":"شاگرد ۰ · لندینگ و انتخاب مربی بر اساس نیاز","is_interactive":true,"radius":28},
+"StudentCoachPage.dc.html":{"x":2350,"y":1264,"w":390,"h":844,"title":"شاگرد ۱ · صفحه‌ی فروش مربی","is_interactive":true,"radius":28},
+"StudentCheckout.dc.html":{"x":1880,"y":1264,"w":390,"h":844,"title":"شاگرد ۲ · ثبت‌نام و پرداخت","is_interactive":true,"radius":28},
+"StudentHealth.dc.html":{"x":1410,"y":1264,"w":390,"h":844,"title":"شاگرد ۳ · پرسشنامه‌ی سلامت","is_interactive":true,"radius":28},
+"StudentSchedule.dc.html":{"x":940,"y":1264,"w":390,"h":844,"title":"شاگرد ۴ · قرار تمرین","is_interactive":true,"radius":28},
+"StudentHome.dc.html":{"x":470,"y":1264,"w":390,"h":844,"title":"شاگرد ۵ · برنامه‌ی من","is_interactive":true,"radius":28},
+"StudentPlayer.dc.html":{"x":0,"y":1264,"w":390,"h":844,"title":"شاگرد ۶ · پخش جلسه و سوال","is_interactive":true,"radius":28}
+},"order":["Main.dc.html","CoachTerm.dc.html","CoachUpload.dc.html","CoachStudents.dc.html","CoachQuestions.dc.html","CoachPayouts.dc.html","StudentLanding.dc.html","StudentCoachPage.dc.html","StudentCheckout.dc.html","StudentHealth.dc.html","StudentSchedule.dc.html","StudentHome.dc.html","StudentPlayer.dc.html"],
+"notes":{
+"coachTitle":{"x":0,"y":-300,"text":"پنل مربی — از راست به چپ","kind":"title1","maxW":2740},
+"studentTitle":{"x":0,"y":964,"text":"مسیر شاگرد — از راست به چپ","kind":"title1","maxW":3210}
+},"designSystems":[]}

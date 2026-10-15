@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>صفحه‌ی فروش مربی</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1f5f8b}a:hover{color:#174a6c}
+.scr{width:390px;height:844px;box-sizing:border-box;background:#f3f4f5;font-family:Vazirmatn,Tahoma,sans-serif;color:#1d2125;direction:rtl;display:flex;flex-direction:column;overflow:hidden}
+.url{min-height:40px;display:flex;align-items:center;justify-content:center;background:#fff;border-bottom:1px solid #d4d7db;font-size:12px;color:#5b6167;direction:ltr}
+.body{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding-bottom:16px}
+.card{background:#fff;border:1px solid #d4d7db;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px;margin:0 16px}
+.card h2{margin:0;font-size:16px;font-weight:700}
+.ph{background:#e4e6e9;border:1px dashed #8f959b;display:flex;align-items:center;justify-content:center;color:#4f555b;font-size:13px;text-align:center}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;min-height:50px;padding:0 16px;border-radius:10px;background:#1d2125;color:#fff;text-decoration:none;font-weight:700;font-size:16px;border:0;font-family:inherit;cursor:pointer}
+.btn:hover{color:#fff;background:#3a4047}
+.muted{color:#5b6167;font-size:13px;margin:0;line-height:1.7}
+.tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;background:#e9ebed;font-size:12px;color:#3c4043;white-space:nowrap}
+.warn{background:#fdf0e1;color:#8a4500}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.li{display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.7}
+.li svg{flex-shrink:0;margin-top:4px}
+</style>
+</helmet>
+<div class="scr">
+  <div class="url">chakavak.ir/[coach-name]</div>
+  <div class="body">
+    <div style="position: relative">
+      <div class="ph" style="height: 150px; border-width: 0 0 1px 0">عکس کاور مربی</div>
+      <div style="position: absolute; bottom: -36px; right: 16px; width: 76px; height: 76px; border-radius: 50%; background: #c9ccd1; border: 4px solid #f3f4f5; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #3c4043">عکس</div>
+    </div>
+    <div style="padding: 36px 16px 0; display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 20px; font-weight: 700">[نام مربی]</span>
+      <span class="muted">هاتا یوگا و حرکات اصلاحی · [سابقه] · ۴۲ شاگرد فعال</span>
+    </div>
+
+    <div class="card">
+      <div class="row"><h2>یوگای پایه — پاییز</h2><span class="tag warn">۳ جای خالی</span></div>
+      <span class="muted">۸ جلسه · هفته‌ای ۲ جلسه · شروع ۱ آبان</span>
+      <div class="li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>ویدیوی هر جلسه با برنامه‌ی تمرین مرحله‌به‌مرحله</div>
+      <div class="li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>سوال از خود مربی، روی همان لحظه‌ی ویدیو</div>
+      <div class="li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>حرکت جایگزین اگر کمردرد، بارداری یا مشکل خاصی داری</div>
+      <div class="li"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>یادآوری روزهایی که خودت انتخاب می‌کنی</div>
+      <div class="row" style="border-top: 1px solid #e4e6e9; padding-top: 10px">
+        <span class="muted">کل ترم</span>
+        <span style="font-size: 18px; font-weight: 700">[قیمت ترم] تومان</span>
+      </div>
+      <a class="btn" href="StudentCheckout.dc.html">ثبت‌نام در ترم</a>
+    </div>
+
+    <div class="card">
+      <h2 style="font-size: 15px">جلسه‌ی اول را رایگان ببین</h2>
+      <div class="ph" style="height: 150px; border-radius: 8px">ویدیوی معرفی / جلسه‌ی نمونه</div>
+    </div>
+
+    <div class="card">
+      <h2 style="font-size: 15px">ترم‌های دیگر این مربی</h2>
+      <div class="row"><span style="font-size: 14px">حرکات اصلاحی کمر</span><span class="muted">۱ جای خالی</span></div>
+      <div class="row"><span style="font-size: 14px">یوگای بارداری</span><span class="muted">ثبت‌نام بسته</span></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

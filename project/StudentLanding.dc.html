@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>لندینگ چکاوک یوگا</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1f5f8b}a:hover{color:#174a6c}
+.scr{width:390px;height:844px;box-sizing:border-box;background:#f3f4f5;font-family:Vazirmatn,Tahoma,sans-serif;color:#1d2125;direction:rtl;display:flex;flex-direction:column;overflow:hidden}
+.top{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 16px;background:#fff;border-bottom:1px solid #d4d7db;flex-shrink:0}
+.body{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:20px;padding-bottom:24px}
+.sec{padding:0 16px;display:flex;flex-direction:column;gap:12px}
+.sec h2{margin:0;font-size:18px;font-weight:700}
+.ph{background:#e4e6e9;border:1px dashed #8f959b;display:flex;align-items:center;justify-content:center;color:#4f555b;font-size:13px;text-align:center}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;min-height:50px;padding:0 16px;border-radius:10px;background:#1d2125;color:#fff;text-decoration:none;font-weight:700;font-size:16px;border:0;font-family:inherit;cursor:pointer}
+.btn:hover{color:#fff;background:#3a4047}
+.btn2{display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 14px;border-radius:10px;background:#fff;color:#1d2125;text-decoration:none;font-weight:500;font-size:14px;border:1px solid #9aa0a6}
+.btn2:hover{color:#1d2125;background:#eceef0}
+.muted{color:#5b6167;font-size:13px;margin:0;line-height:1.7}
+.needs{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:8px}
+.need{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:12px;min-height:96px;border-radius:12px;border:1px solid #c4c8cd;background:#fff;color:#1d2125;font-family:inherit;text-align:right;cursor:pointer}
+.need b{font-size:14px;line-height:1.5}
+.need span{font-size:12px;color:#5b6167;line-height:1.5}
+.need.on{background:#1d2125;border-color:#1d2125;color:#fff}
+.need.on span{color:#c9ccd1}
+.all{align-self:flex-start;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid #b4b9bf;background:#fff;font-family:inherit;font-size:13px;cursor:pointer;color:#1d2125}
+.all.on{background:#1d2125;color:#fff;border-color:#1d2125}
+.coach{background:#fff;border:1px solid #d4d7db;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.av{width:56px;height:56px;border-radius:50%;background:#d4d7db;display:flex;align-items:center;justify-content:center;font-size:11px;color:#4f555b;flex-shrink:0}
+.tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;background:#e9ebed;font-size:12px;color:#3c4043;white-space:nowrap}
+.step{display:flex;gap:12px;align-items:flex-start}
+.step i{width:28px;height:28px;border-radius:50%;background:#1d2125;color:#fff;font-style:normal;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+</style>
+</helmet>
+<div class="scr">
+  <div class="top">
+    <span style="font-size: 17px; font-weight: 700">چکاوک یوگا</span>
+    <div style="display: flex; gap: 14px; align-items: center">
+      <a href="Main.dc.html" style="font-size: 13px">مربی هستی؟</a>
+      <a href="StudentHome.dc.html" style="font-size: 13px; color: #1d2125; font-weight: 700">ورود</a>
+    </div>
+  </div>
+  <div class="body">
+    <div class="sec" style="padding-top: 20px">
+      <span style="font-size: 26px; font-weight: 700; line-height: 1.5">تمرین برای چیزی که بدنت لازم دارد</span>
+      <p class="muted" style="font-size: 15px">بگو دنبال چه هستی تا مربی‌ای را نشانت بدهیم که روی همین کار می‌کند. ترمی، با برنامه، و با کسی که می‌داند زانویت مشکل دارد.</p>
+      <div class="ph" style="height: 150px; border-radius: 12px">تصویر یا ویدیوی کوتاه از یک جلسه</div>
+    </div>
+
+    <div class="sec" id="needs">
+      <h2>دنبال چه هستی؟</h2>
+      <div class="needs">
+        <button class="{{cls.posture}}" onClick="{{pick.posture}}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M8 7h8M9 12h6M8 17h8"></path></svg>
+          <b>اصلاح فرم بدن</b><span>قوز، شانه‌ی جلوآمده، گودی کمر</span>
+        </button>
+        <button class="{{cls.strength}}" onClick="{{pick.strength}}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 8v8M3 10v4M18 8v8M21 10v4M6 12h12"></path></svg>
+          <b>قدرت و استقامت</b><span>بدن محکم‌تر، نفس بیشتر</span>
+        </button>
+        <button class="{{cls.muscle}}" onClick="{{pick.muscle}}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"></path></svg>
+          <b>عضله‌سازی و فرم‌دهی</b><span>در خانه، بدون دستگاه</span>
+        </button>
+        <button class="{{cls.calm}}" onClick="{{pick.calm}}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14A8 8 0 1 1 10 4a6 6 0 0 0 10 10z"></path></svg>
+          <b>آرامش و کاهش استرس</b><span>تنفس، خواب بهتر، ذهن آرام</span>
+        </button>
+        <button class="{{cls.flex}}" onClick="{{pick.flex}}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 12c3-6 6 6 9 0s6 6 9 0"></path></svg>
+          <b>انعطاف و کشش</b><span>آرام و کند، مفاصل روان‌تر</span>
+        </button>
+        <button class="{{cls.desk}}" onClick="{{pick.desk}}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"></rect><path d="M8 20h8M12 16v4"></path></svg>
+          <b>کمر و گردنِ پشت‌میز</b><span>برای کسی که روزی ۸ ساعت می‌نشیند</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+        <h2>{{heading}}</h2>
+        <button class="{{allCls}}" onClick="{{pick.all}}">همه‌ی مربی‌ها</button>
+      </div>
+      <sc-for list="{{coaches}}" as="c" hint-placeholder-count="3">
+        <div class="coach">
+          <div style="display: flex; gap: 12px; align-items: center">
+            <div class="av">عکس</div>
+            <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+              <span style="font-size: 16px; font-weight: 700">{{c.name}}</span>
+              <span class="muted">{{c.about}}</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            <sc-for list="{{c.tags}}" as="t" hint-placeholder-count="2"><span class="tag">{{t}}</span></sc-for>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid #e4e6e9; padding-top: 10px">
+            <span class="muted">{{c.term}}</span>
+            <span style="font-size: 13px; font-weight: 700; white-space: nowrap">{{c.seats}}</span>
+          </div>
+          <a class="btn2" href="StudentCoachPage.dc.html">دیدن ترم‌ها و جلسه‌ی رایگان</a>
+        </div>
+      </sc-for>
+    </div>
+
+    <div class="sec">
+      <h2>چطور کار می‌کند؟</h2>
+      <div class="step"><i>۱</i><div><b style="font-size: 14px">نیازت را بگو و مربی‌ات را انتخاب کن</b><p class="muted">جلسه‌ی اول هر مربی رایگان است.</p></div></div>
+      <div class="step"><i>۲</i><div><b style="font-size: 14px">ترم را بخر و بگو کی تمرین می‌کنی</b><p class="muted">یادآوری را روی همان روزها می‌گذاریم.</p></div></div>
+      <div class="step"><i>۳</i><div><b style="font-size: 14px">تمرین کن و از خود مربی بپرس</b><p class="muted">اگر مشکل جسمی داری، حرکت جایگزین می‌بینی.</p></div></div>
+      <a class="btn" href="#needs">پیدا کردن مربی</a>
+    </div>
+
+    <div class="sec">
+      <div style="background: #1d2125; color: #fff; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 16px; font-weight: 700">مربی هستی؟</span>
+        <span style="font-size: 13px; color: #c9ccd1; line-height: 1.8">ترم بعدی‌ات را اینجا بفروش. پرداخت، دسترسی، یادآوری و پیگیری شاگرد با ما.</span>
+        <a class="btn2" href="Main.dc.html" style="border: 0">شروع رایگان</a>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { need: null };
+  }
+  renderVals() {
+    var labels = {
+      posture: 'اصلاح فرم بدن',
+      strength: 'قدرت و استقامت',
+      muscle: 'عضله‌سازی و فرم‌دهی',
+      calm: 'آرامش و کاهش استرس',
+      flex: 'انعطاف و کشش',
+      desk: 'کمر و گردن پشت‌میز'
+    };
+    var all = [
+      { name: 'نیلوفر ا.', about: 'حرکات اصلاحی و ستون فقرات', needs: ['posture', 'desk'], term: 'ترم بعدی: ۱ آبان', seats: '۳ جای خالی' },
+      { name: 'آرش ک.', about: 'یوگای قدرتی و تمرین با وزن بدن', needs: ['strength', 'muscle'], term: 'ترم بعدی: ۵ آبان', seats: '۸ جای خالی' },
+      { name: 'مهسا ت.', about: 'یوگای آرام، تنفس و مدیتیشن', needs: ['calm', 'flex'], term: 'ترم بعدی: ۳ آبان', seats: '۲ جای خالی' },
+      { name: 'بهاره ن.', about: 'کشش عمیق و تحرک مفاصل', needs: ['flex', 'posture'], term: 'ترم بعدی: ۱۰ آبان', seats: '۶ جای خالی' },
+      { name: 'کاوه ر.', about: 'فرم‌دهی بدن در خانه، بدون تجهیزات', needs: ['muscle', 'strength'], term: 'ترم بعدی: ۱ آبان', seats: '۵ جای خالی' },
+      { name: 'سپیده م.', about: 'یوگا برای پشت‌میزنشین‌ها و خواب بهتر', needs: ['desk', 'calm'], term: 'ترم بعدی: ۸ آبان', seats: '۴ جای خالی' }
+    ];
+    var need = this.state.need;
+    var self = this;
+    var keys = Object.keys(labels);
+    var cls = {};
+    var pick = { all: function () { self.setState({ need: null }); } };
+    keys.forEach(function (k) {
+      cls[k] = need === k ? 'need on' : 'need';
+      pick[k] = function () { self.setState({ need: self.state.need === k ? null : k }); };
+    });
+    var coaches = all
+      .filter(function (c) { return !need || c.needs.indexOf(need) !== -1; })
+      .map(function (c) {
+        return { name: c.name, about: c.about, term: c.term, seats: c.seats, tags: c.needs.map(function (n) { return labels[n]; }) };
+      });
+    return {
+      cls: cls,
+      pick: pick,
+      allCls: need ? 'all' : 'all on',
+      heading: need ? 'مربی‌های ' + labels[need] : 'مربی‌ها',
+      coaches: coaches
+    };
+  }
+}
+</script>
+</body>
+</html>
