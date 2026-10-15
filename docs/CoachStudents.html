@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>شاگردها · وایرفریم چکاوک یوگا</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1f5f8b}a:hover{color:#174a6c}
+.scr{width:390px;height:844px;box-sizing:border-box;background:#f3f4f5;font-family:Vazirmatn,Tahoma,sans-serif;color:#1d2125;direction:rtl;display:flex;flex-direction:column;overflow:hidden}
+.top{min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 16px;background:#fff;border-bottom:1px solid #d4d7db}
+.top h1{margin:0;font-size:17px;font-weight:700}
+.body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+.muted{color:#5b6167;font-size:12px;margin:0;line-height:1.6}
+.tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;background:#e9ebed;font-size:12px;color:#3c4043;white-space:nowrap}
+.warn{background:#fdf0e1;color:#8a4500}
+.chip{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #b4b9bf;font-size:13px;white-space:nowrap}
+.chip.on{background:#1d2125;color:#fff;border-color:#1d2125;font-weight:700}
+.search{height:44px;box-sizing:border-box;border:1px solid #b4b9bf;border-radius:10px;padding:0 12px;font-family:inherit;font-size:14px;background:#fff;width:100%}
+.list{background:#fff;border:1px solid #d4d7db;border-radius:12px;display:flex;flex-direction:column}
+.st{display:flex;gap:10px;padding:12px 14px;border-top:1px solid #e4e6e9}
+.st:first-child{border-top:0}
+.av{width:36px;height:36px;border-radius:50%;background:#d4d7db;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#3c4043;flex-shrink:0}
+.dots{display:flex;gap:4px}
+.dots i{width:14px;height:14px;border-radius:3px;background:#1d2125;display:block}
+.dots i.x{background:#fff;border:1.5px solid #d99a4e;box-sizing:border-box}
+.dots i.n{background:#e1e3e6}
+.tabs{height:64px;flex-shrink:0;background:#fff;border-top:1px solid #d4d7db;display:flex}
+.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;color:#6b7177;text-decoration:none}
+.tabs a:hover{color:#1d2125}
+.tabs a.on{color:#1d2125;font-weight:700}
+</style>
+
+<style>
+html{background:#d9dcdf}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px 0;box-sizing:border-box}
+.wf-back{font-family:Vazirmatn,Tahoma,sans-serif;font-size:13px;color:#1d2125;direction:rtl}
+.scr{border-radius:28px;box-shadow:0 8px 32px rgba(0,0,0,.12)}
+@media (max-width:480px){
+  body{padding:0;justify-content:flex-start}
+  .wf-back{display:none}
+  .scr{width:100%!important;height:100vh!important;height:100dvh!important;border-radius:0;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<a class="wf-back" href="index.html">همه‌ی صفحه‌ها</a>
+<div class="scr">
+  <div class="top">
+    <h1>شاگردها</h1>
+    <span class="muted" style="font-size: 13px">یوگای پایه — پاییز</span>
+  </div>
+  <div class="body">
+    <label for="s-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden">جست‌وجو</label>
+    <input id="s-q" class="search" placeholder="جست‌وجوی نام یا موبایل">
+    <div style="display: flex; gap: 8px; flex-wrap: wrap">
+      <span class="chip on">همه ۲۲</span>
+      <span class="chip">در حال ریزش ۵</span>
+      <span class="chip">ملاحظه‌ی پزشکی ۷</span>
+    </div>
+    <div class="row muted" style="display: flex; gap: 12px; align-items: center">
+      <span style="display: flex; gap: 4px; align-items: center"><i style="width: 10px; height: 10px; background: #1d2125; border-radius: 2px; display: block"></i>تمرین کرده</span>
+      <span style="display: flex; gap: 4px; align-items: center"><i style="width: 10px; height: 10px; border: 1.5px solid #d99a4e; border-radius: 2px; display: block"></i>از دست داده</span>
+      <span style="display: flex; gap: 4px; align-items: center"><i style="width: 10px; height: 10px; background: #e1e3e6; border-radius: 2px; display: block"></i>هنوز نرسیده</span>
+    </div>
+
+    <div class="list">
+      <div class="st">
+        <span class="av">س</span>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+          <div style="display: flex; justify-content: space-between; gap: 6px"><span style="font-size: 14px; font-weight: 700">سارا م.</span><span class="tag warn">۲ هفته غیبت</span></div>
+          <div class="dots"><i></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i></div>
+          <span class="tag" style="align-self: flex-start">دیسک کمر</span>
+        </div>
+      </div>
+      <div class="st">
+        <span class="av">ن</span>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+          <div style="display: flex; justify-content: space-between; gap: 6px"><span style="font-size: 14px; font-weight: 700">نگار ک.</span><span class="muted">۴ از ۴</span></div>
+          <div class="dots"><i></i><i></i><i></i><i></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i></div>
+        </div>
+      </div>
+      <div class="st">
+        <span class="av">ر</span>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+          <div style="display: flex; justify-content: space-between; gap: 6px"><span style="font-size: 14px; font-weight: 700">رضا ب.</span><span class="tag warn">۳ جلسه عقب</span></div>
+          <div class="dots"><i></i><i class="x"></i><i></i><i class="x"></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i></div>
+          <span class="tag" style="align-self: flex-start">فشار خون</span>
+        </div>
+      </div>
+      <div class="st">
+        <span class="av">م</span>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+          <div style="display: flex; justify-content: space-between; gap: 6px"><span style="font-size: 14px; font-weight: 700">مینا ر.</span><span class="muted">۴ از ۴</span></div>
+          <div class="dots"><i></i><i></i><i></i><i></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i></div>
+          <span class="tag" style="align-self: flex-start">باردار — ماه ۴</span>
+        </div>
+      </div>
+      <div class="st">
+        <span class="av">ا</span>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+          <div style="display: flex; justify-content: space-between; gap: 6px"><span style="font-size: 14px; font-weight: 700">الهام ت.</span><span class="muted">۳ از ۴</span></div>
+          <div class="dots"><i></i><i></i><i class="x"></i><i></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="منوی مربی">
+    <a href="CoachDashboard.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>داشبورد</a>
+    <a href="CoachTerm.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>ترم‌ها</a>
+    <a class="on" href="CoachStudents.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 11a3 3 0 1 0 0-6M22 21c0-3-2-5-5-5"></path></svg>شاگردها</a>
+    <a href="CoachQuestions.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg>سوال‌ها</a>
+    <a href="CoachPayouts.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"></rect><path d="M3 10h18M16 15h2"></path></svg>درآمد</a>
+  </nav>
+</div>
+</body>
+</html>

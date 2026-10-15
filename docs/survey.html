@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>نظرسنجی مربی‌ها · چکاوک یوگا</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f3f4f5;font-family:Vazirmatn,Tahoma,sans-serif;color:#1d2125}
+main{max-width:600px;margin:0 auto;padding:28px 16px 48px;display:flex;flex-direction:column;gap:16px}
+h1{margin:0;font-size:24px}
+p{margin:0;line-height:1.8;color:#4f555b;font-size:15px}
+form{display:flex;flex-direction:column;gap:14px}
+fieldset{margin:0;background:#fff;border:1px solid #d4d7db;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+legend{float:right;width:100%;padding:0;margin-bottom:4px;font-size:16px;font-weight:700;line-height:1.7}
+.hint{font-size:13px;color:#5b6167;font-weight:400}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+input[type=text],input[type=tel],select,textarea{font-family:inherit;font-size:16px;border:1px solid #b4b9bf;border-radius:8px;padding:0 12px;background:#fff;color:#1d2125;width:100%;box-sizing:border-box}
+input[type=text],input[type=tel],select{height:48px}
+textarea{padding:10px 12px;min-height:96px;resize:vertical;line-height:1.7}
+input:focus,select:focus,textarea:focus{outline:2px solid #1d2125;outline-offset:1px}
+.opt{display:flex;align-items:center;gap:10px;min-height:44px;font-size:15px;cursor:pointer}
+.opt input{width:20px;height:20px;margin:0;accent-color:#1d2125;flex-shrink:0}
+.ltr{direction:ltr;text-align:right}
+.req{color:#a33d00}
+button{font-family:inherit;min-height:52px;border:0;border-radius:10px;background:#1d2125;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+button:hover{background:#3a4047}
+button:disabled{background:#8f959b;cursor:default}
+.msg{border-radius:12px;padding:14px 16px;font-size:15px;line-height:1.8;display:none}
+.msg.ok{display:block;background:#e6f2ea;border:1px solid #6aa57f;color:#1e4d2e}
+.msg.err{display:block;background:#fdf0e1;border:1px solid #d99a4e;color:#6b3600}
+.hp{position:absolute;right:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+</head>
+<body>
+<main>
+  <a href="index.html" style="font-size:14px;color:#1f5f8b">دیدن نمونه‌ی اولیه</a>
+  <h1>چند سوال از مربی‌های یوگا</h1>
+  <p>داریم ابزاری می‌سازیم که کارهای فروش و پیگیری شاگرد را از دوش مربی بردارد. قبلش می‌خواهیم بدانیم کار شما الان چطور می‌چرخد. چیزی نمی‌فروشیم و اطلاعاتتان فقط دست تیم ما می‌ماند.</p>
+
+  <form id="survey" novalidate>
+    <fieldset>
+      <legend>آشنایی</legend>
+      <label class="f"><span>اسم <span class="req" aria-hidden="true">*</span></span><input type="text" name="name" required autocomplete="name"></label>
+      <label class="f"><span>شماره‌ی موبایل <span class="req" aria-hidden="true">*</span></span><input type="tel" name="phone" required inputmode="tel" autocomplete="tel" class="ltr" placeholder="09xx xxx xxxx"></label>
+      <label class="f"><span>آیدی پیج اینستاگرام <span class="req" aria-hidden="true">*</span></span><input type="text" name="instagram" required class="ltr" placeholder="@" autocapitalize="off" spellcheck="false"></label>
+      <label class="f">شهر<input type="text" name="city" autocomplete="address-level2"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>۱. الان کلاس‌هایت چه شکلی است؟ <span class="hint">هر چند مورد که هست</span></legend>
+      <label class="opt"><input type="checkbox" name="teaching" value="حضوری">حضوری</label>
+      <label class="opt"><input type="checkbox" name="teaching" value="آنلاین لایو">آنلاین لایو</label>
+      <label class="opt"><input type="checkbox" name="teaching" value="ویدیوی ضبط‌شده">ویدیوی ضبط‌شده</label>
+      <label class="opt"><input type="checkbox" name="teaching" value="خصوصی">جلسه‌ی خصوصی</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>۲. شاگردهایت بیشتر با چه هدفی می‌آیند؟ <span class="hint">حداکثر سه مورد</span></legend>
+      <label class="opt"><input type="checkbox" name="needs" value="اصلاح فرم بدن">اصلاح فرم بدن (قوز، گودی کمر)</label>
+      <label class="opt"><input type="checkbox" name="needs" value="قدرت و استقامت">قدرت و استقامت</label>
+      <label class="opt"><input type="checkbox" name="needs" value="عضله‌سازی و فرم‌دهی">عضله‌سازی و فرم‌دهی</label>
+      <label class="opt"><input type="checkbox" name="needs" value="آرامش و استرس">آرامش و کاهش استرس</label>
+      <label class="opt"><input type="checkbox" name="needs" value="انعطاف و کشش">انعطاف و کشش</label>
+      <label class="opt"><input type="checkbox" name="needs" value="کمر و گردن">کمردرد و گردن‌درد</label>
+      <label class="f">چیز دیگر<input type="text" name="needs_other"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>۳. پول کلاس آنلاین را معمولاً چطور می‌گیری؟</legend>
+      <label class="opt"><input type="radio" name="payment" value="کارت‌به‌کارت">کارت‌به‌کارت</label>
+      <label class="opt"><input type="radio" name="payment" value="درگاه یا سایت خودم">درگاه یا سایت خودم</label>
+      <label class="opt"><input type="radio" name="payment" value="پلتفرم دیگر">از طریق یک پلتفرم دیگر</label>
+      <label class="opt"><input type="radio" name="payment" value="آنلاین نمی‌فروشم">آنلاین نمی‌فروشم</label>
+    </fieldset>
+
+    <fieldset>
+      <legend><label for="pain">۴. در فروش و برگزاری کلاس آنلاین، کدام قسمت بیشتر از همه اذیتت می‌کند یا وقتت را می‌گیرد؟</label></legend>
+      <textarea id="pain" name="pain" placeholder="مثلاً چک کردن رسیدها، فرستادن لینک، جواب دادن به دایرکت‌ها…"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend><label for="completion">۵. از ده نفری که یک ترم را شروع می‌کنند، چند نفر تا آخرش واقعاً تمرین می‌کنند؟</label></legend>
+      <select id="completion" name="completion">
+        <option value="">انتخاب کن</option>
+        <option>کمتر از ۳ نفر</option>
+        <option>۳ تا ۵ نفر</option>
+        <option>۵ تا ۷ نفر</option>
+        <option>بیشتر از ۷ نفر</option>
+        <option>نمی‌دانم</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend><label for="medical">۶. شاگرد با مشکل جسمی (دیسک، بارداری، فشار خون…) داشته‌ای؟ از کجا خبردار شدی و چه کردی؟</label></legend>
+      <textarea id="medical" name="medical"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend><label for="dm_time">۷. روزی چقدر وقتت پای جواب دادن به پیام شاگردها می‌رود؟</label></legend>
+      <select id="dm_time" name="dm_time">
+        <option value="">انتخاب کن</option>
+        <option>کمتر از ۱۵ دقیقه</option>
+        <option>۱۵ تا ۴۵ دقیقه</option>
+        <option>۴۵ دقیقه تا ۲ ساعت</option>
+        <option>بیشتر از ۲ ساعت</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend><label for="tools">۸. الان برای چه ابزار یا کسی پول می‌دهی؟</label> <span class="hint">اسکای‌روم، سایت، ادمین، فیلمبردار…</span></legend>
+      <input id="tools" type="text" name="tools">
+    </fieldset>
+
+    <fieldset>
+      <legend>۹. حاضری یک تماس ۲۰ دقیقه‌ای داشته باشیم که نمونه را نشانت بدهیم؟</legend>
+      <label class="opt"><input type="radio" name="call" value="بله">بله</label>
+      <label class="opt"><input type="radio" name="call" value="شاید بعداً">شاید بعداً</label>
+      <label class="opt"><input type="radio" name="call" value="نه">نه</label>
+      <label class="f">بهترین زمان برای تماس<input type="text" name="call_time" placeholder="مثلاً عصرهای شنبه"></label>
+    </fieldset>
+
+    <div class="hp" aria-hidden="true"><label>وبسایت<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+    <div id="msg" class="msg" role="status" aria-live="polite"></div>
+    <button type="submit" id="send">ارسال</button>
+  </form>
+</main>
+<script>
+// Apps Script web app URL (see apps-script/Code.gs in the repo).
+var ENDPOINT = '';
+
+(function () {
+  var form = document.getElementById('survey');
+  var msg = document.getElementById('msg');
+  var btn = document.getElementById('send');
+
+  function show(kind, text) {
+    msg.className = 'msg ' + kind;
+    msg.textContent = text;
+    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.name.value.trim();
+    var phone = form.phone.value.trim();
+    var ig = form.instagram.value.trim();
+    if (!name || !phone || !ig) {
+      show('err', 'لطفاً اسم، شماره‌ی موبایل و آیدی پیج را وارد کن.');
+      return;
+    }
+    if (!ENDPOINT) {
+      show('err', 'فرم هنوز به جدول ذخیره‌سازی وصل نشده است.');
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'در حال ارسال…';
+    fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) })
+      .then(function () {
+        form.reset();
+        form.style.display = 'none';
+        msg.parentNode.removeChild(msg);
+        form.parentNode.appendChild(msg);
+        show('ok', 'ممنون! جوابت ثبت شد. اگر تماس را قبول کرده باشی، به‌زودی پیام می‌دهیم.');
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'ارسال';
+        show('err', 'ارسال نشد. اینترنت را چک کن و دوباره بزن.');
+      });
+  });
+})();
+</script>
+</body>
+</html>
