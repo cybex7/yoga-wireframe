@@ -9,18 +9,31 @@
 body{margin:0;background:#f3f4f5;font-family:Vazirmatn,Tahoma,sans-serif;color:#1d2125}
 main{max-width:600px;margin:0 auto;padding:28px 16px 48px;display:flex;flex-direction:column;gap:16px}
 h1{margin:0;font-size:24px}
+h2{margin:8px 0 0;font-size:18px}
 p{margin:0;line-height:1.8;color:#4f555b;font-size:15px}
 form{display:flex;flex-direction:column;gap:14px}
 fieldset{margin:0;background:#fff;border:1px solid #d4d7db;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+fieldset[hidden]{display:none}
+fieldset.detail{border-color:#1d2125;border-width:1.5px}
 legend{float:right;width:100%;padding:0;margin-bottom:4px;font-size:16px;font-weight:700;line-height:1.7}
 .hint{font-size:13px;color:#5b6167;font-weight:400}
-label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+.sub{font-size:15px;font-weight:700;margin-top:6px;line-height:1.7}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500;line-height:1.7}
 input[type=text],input[type=tel],select,textarea{font-family:inherit;font-size:16px;border:1px solid #b4b9bf;border-radius:8px;padding:0 12px;background:#fff;color:#1d2125;width:100%;box-sizing:border-box}
 input[type=text],input[type=tel],select{height:48px}
-textarea{padding:10px 12px;min-height:96px;resize:vertical;line-height:1.7}
+textarea{padding:10px 12px;min-height:84px;resize:vertical;line-height:1.7}
 input:focus,select:focus,textarea:focus{outline:2px solid #1d2125;outline-offset:1px}
-.opt{display:flex;align-items:center;gap:10px;min-height:44px;font-size:15px;cursor:pointer}
+.opt{display:flex;align-items:center;gap:10px;min-height:44px;font-size:15px;cursor:pointer;line-height:1.6}
 .opt input{width:20px;height:20px;margin:0;accent-color:#1d2125;flex-shrink:0}
+.mode{display:flex;flex-direction:column;gap:8px;padding:12px 0;border-top:1px solid #e4e6e9}
+.mode:first-of-type{border-top:0;padding-top:0}
+.mode b{font-size:15px}
+.pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.pills label{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:4px 6px;border:1px solid #b4b9bf;border-radius:8px;font-size:13px;cursor:pointer;line-height:1.4}
+.pills input{position:absolute;opacity:0;pointer-events:none}
+.pills label:has(input:checked){background:#1d2125;border-color:#1d2125;color:#fff;font-weight:700}
+.pills label:has(input:focus-visible){outline:2px solid #1d2125;outline-offset:2px}
+.missing{background:#fdf0e1;border-radius:8px;padding:8px}
 .ltr{direction:ltr;text-align:right}
 .req{color:#a33d00}
 button{font-family:inherit;min-height:52px;border:0;border-radius:10px;background:#1d2125;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
@@ -36,7 +49,8 @@ button:disabled{background:#8f959b;cursor:default}
 <main>
   <a href="index.html" style="font-size:14px;color:#1f5f8b">مشاهده‌ی نمونه‌ی اولیه</a>
   <h1>چند سوال کوتاه از مربی‌های یوگا</h1>
-  <p>داریم ابزاری می‌سازیم که کارهای فروش و پیگیری شاگرد را از دوش مربی بردارد. قبلش می‌خواهیم بدانیم کار شما الان چطور می‌چرخد. چیزی نمی‌فروشیم و اطلاعات شما فقط پیش تیم ما می‌ماند.</p>
+  <p>داریم ابزاری می‌سازیم که کارهای فروش و پیگیری شاگرد را از دوش مربی بردارد. قبلش می‌خواهیم بدانیم کار شما الان چطور می‌چرخد و در هر روش تدریس با چه مشکلاتی روبه‌رو بوده‌اید. چیزی نمی‌فروشیم و اطلاعات شما فقط پیش تیم ما می‌ماند.</p>
+  <p class="hint">بسته به جواب‌هایتان، فقط سوال‌های مربوط به شما نمایش داده می‌شود.</p>
 
   <form id="survey" novalidate>
     <fieldset>
@@ -45,42 +59,57 @@ button:disabled{background:#8f959b;cursor:default}
       <label class="f"><span>شماره موبایل <span class="req" aria-hidden="true">*</span></span><input type="tel" name="phone" required inputmode="tel" autocomplete="tel" class="ltr" placeholder="09xx xxx xxxx"></label>
       <label class="f"><span>آیدی پیج اینستاگرام <span class="req" aria-hidden="true">*</span></span><input type="text" name="instagram" required class="ltr" placeholder="@" autocapitalize="off" spellcheck="false"></label>
       <label class="f">شهر<input type="text" name="city" autocomplete="address-level2"></label>
+      <label class="f">سابقه‌ی تدریس
+        <select name="years">
+          <option value="">انتخاب کنید</option>
+          <option>کمتر از ۲ سال</option>
+          <option>۲ تا ۵ سال</option>
+          <option>۵ تا ۱۰ سال</option>
+          <option>بیشتر از ۱۰ سال</option>
+        </select>
+      </label>
     </fieldset>
 
-    <fieldset>
-      <legend>۱. کلاس‌های شما در حال حاضر به چه شکلی برگزار می‌شود؟ <span class="hint">هر چند مورد که با کار شما مطابقت دارد</span></legend>
-      <label class="opt"><input type="checkbox" name="teaching" value="حضوری">حضوری</label>
-      <label class="opt"><input type="checkbox" name="teaching" value="آنلاین لایو">آنلاین لایو</label>
-      <label class="opt"><input type="checkbox" name="teaching" value="ویدیوی ضبط‌شده">ویدیوی ضبط‌شده</label>
-      <label class="opt"><input type="checkbox" name="teaching" value="خصوصی">جلسه‌ی خصوصی</label>
+    <fieldset id="modes">
+      <legend>۱. تا امروز به چه روش‌هایی تدریس کرده‌اید؟ <span class="req" aria-hidden="true">*</span> <span class="hint">برای هر روش یک گزینه را انتخاب کنید</span></legend>
+      <!-- filled by script -->
     </fieldset>
 
+    <div id="details" style="display:flex;flex-direction:column;gap:14px"></div>
+
+    <fieldset id="no-online" class="detail" hidden disabled>
+      <legend>شما تا حالا آنلاین تدریس نکرده‌اید</legend>
+      <div class="sub">چه چیزی تا امروز مانع شروع کار آنلاین بوده است؟ <span class="hint">هر چند مورد</span></div>
+      <label class="opt"><input type="checkbox" name="no_online_why" value="آشنا نبودن با ابزارها و فناوری">آشنا نبودن با ابزارها و فناوری</label>
+      <label class="opt"><input type="checkbox" name="no_online_why" value="نگرانی از پخش شدن ویدیوها">نگرانی از پخش شدن ویدیوها</label>
+      <label class="opt"><input type="checkbox" name="no_online_why" value="فکر نمی‌کنم شاگرد برای آنلاین هزینه کند">فکر نمی‌کنم شاگرد برای کلاس آنلاین هزینه کند</label>
+      <label class="opt"><input type="checkbox" name="no_online_why" value="نبود وقت برای ضبط و تدوین">نبود وقت برای ضبط و تدوین</label>
+      <label class="opt"><input type="checkbox" name="no_online_why" value="نداشتن تجهیزات یا فضای مناسب">نداشتن تجهیزات یا فضای مناسب (دوربین، نور، فضا)</label>
+      <label class="opt"><input type="checkbox" name="no_online_why" value="نگرانی از آسیب شاگرد بدون نظارت">نگرانی از آسیب دیدن شاگرد بدون نظارت حضوری</label>
+      <label class="opt"><input type="checkbox" name="no_online_why" value="نمی‌دانم شاگرد آنلاین را از کجا پیدا کنم">نمی‌دانم شاگرد آنلاین را از کجا پیدا کنم</label>
+      <label class="opt"><input type="checkbox" name="no_online_why" value="ترجیح می‌دهم حضوری کار کنم">ترجیح می‌دهم فقط حضوری کار کنم</label>
+      <div class="sub">تمایل دارید کار آنلاین را شروع کنید؟</div>
+      <label class="opt"><input type="radio" name="no_online_start" value="بله، به‌زودی">بله، به‌زودی</label>
+      <label class="opt"><input type="radio" name="no_online_start" value="شاید">شاید، اگر شرایطش فراهم شود</label>
+      <label class="opt"><input type="radio" name="no_online_start" value="خیر">خیر</label>
+      <label class="f">برای شروع، به چه کمکی بیشتر از همه نیاز دارید؟<textarea name="no_online_need"></textarea></label>
+    </fieldset>
+
+    <h2>درباره‌ی شاگردان</h2>
+
     <fieldset>
-      <legend>۲. شاگردان شما بیشتر با چه هدفی در کلاس‌ها شرکت می‌کنند؟ <span class="hint">حداکثر سه مورد را انتخاب کنید</span></legend>
+      <legend>۲. شاگردان شما بیشتر با چه هدفی در کلاس‌ها شرکت می‌کنند؟ <span class="hint">حداکثر سه مورد</span></legend>
       <label class="opt"><input type="checkbox" name="needs" value="اصلاح فرم بدن">اصلاح فرم بدن (قوز، گودی کمر)</label>
       <label class="opt"><input type="checkbox" name="needs" value="قدرت و استقامت">قدرت و استقامت</label>
       <label class="opt"><input type="checkbox" name="needs" value="عضله‌سازی و فرم‌دهی">عضله‌سازی و فرم‌دهی</label>
-      <label class="opt"><input type="checkbox" name="needs" value="آرامش و استرس">آرامش و کاهش استرس</label>
+      <label class="opt"><input type="checkbox" name="needs" value="آرامش و کاهش استرس">آرامش و کاهش استرس</label>
       <label class="opt"><input type="checkbox" name="needs" value="انعطاف و کشش">انعطاف و کشش</label>
-      <label class="opt"><input type="checkbox" name="needs" value="کمر و گردن">بهبود کمردرد و گردن‌درد</label>
+      <label class="opt"><input type="checkbox" name="needs" value="کمردرد و گردن‌درد">بهبود کمردرد و گردن‌درد</label>
       <label class="f">موارد دیگر<input type="text" name="needs_other"></label>
     </fieldset>
 
     <fieldset>
-      <legend>۳. هزینه‌ی کلاس‌های آنلاین را معمولاً به چه روشی دریافت می‌کنید؟</legend>
-      <label class="opt"><input type="radio" name="payment" value="کارت‌به‌کارت">کارت‌به‌کارت</label>
-      <label class="opt"><input type="radio" name="payment" value="درگاه یا سایت خودم">درگاه یا سایت شخصی</label>
-      <label class="opt"><input type="radio" name="payment" value="پلتفرم دیگر">از طریق پلتفرم‌های دیگر</label>
-      <label class="opt"><input type="radio" name="payment" value="آنلاین نمی‌فروشم">کلاس آنلاین ندارم</label>
-    </fieldset>
-
-    <fieldset>
-      <legend><label for="pain">۴. در فرآیند فروش و برگزاری کلاس آنلاین، کدام بخش بیشتر شما را خسته می‌کند یا وقتتان را می‌گیرد؟</label></legend>
-      <textarea id="pain" name="pain" placeholder="مثلاً چک کردن رسیدها، ارسال لینک، پاسخ به دایرکت‌ها و…"></textarea>
-    </fieldset>
-
-    <fieldset>
-      <legend><label for="completion">۵. از میان ده نفری که یک ترم را شروع می‌کنند، معمولاً چند نفر واقعاً تا انتهای ترم تمرین می‌کنند؟</label></legend>
+      <legend><label for="completion">۳. از میان ده نفری که یک ترم یا دوره را شروع می‌کنند، معمولاً چند نفر واقعاً تا انتهای آن تمرین می‌کنند؟</label></legend>
       <select id="completion" name="completion">
         <option value="">انتخاب کنید</option>
         <option>کمتر از ۳ نفر</option>
@@ -92,8 +121,35 @@ button:disabled{background:#8f959b;cursor:default}
     </fieldset>
 
     <fieldset>
-      <legend><label for="medical">۶. تا به حال شاگردی با شرایط خاص جسمی (مثل دیسک، بارداری یا فشار خون) داشته‌اید؟ چطور مطلع شدید و چه اقدامی کردید؟</label></legend>
+      <legend><label for="medical">۴. تا به حال شاگردی با شرایط خاص جسمی (مثل دیسک، بارداری یا فشار خون) داشته‌اید؟ چطور مطلع شدید و چه اقدامی کردید؟</label></legend>
       <textarea id="medical" name="medical"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>۵. شاگردان چه چیزهایی از شما خواسته‌اند که نتوانسته‌اید فراهم کنید؟ <span class="hint">هر چند مورد</span></legend>
+      <label class="opt"><input type="checkbox" name="student_requests" value="برنامه‌ی تمرینی شخصی">برنامه‌ی تمرینی شخصی</label>
+      <label class="opt"><input type="checkbox" name="student_requests" value="دسترسی دائمی به ویدیوها">دسترسی دائمی به ویدیوها</label>
+      <label class="opt"><input type="checkbox" name="student_requests" value="جلسه‌ی جبرانی">جلسه‌ی جبرانی برای جلسه‌های ازدست‌رفته</label>
+      <label class="opt"><input type="checkbox" name="student_requests" value="بازخورد روی ویدیوی تمرین خودشان">بازخورد روی ویدیوی تمرین خودشان</label>
+      <label class="opt"><input type="checkbox" name="student_requests" value="جواب سریع‌تر به سوال‌ها">جواب سریع‌تر به سوال‌ها</label>
+      <label class="opt"><input type="checkbox" name="student_requests" value="کلاس در ساعت‌های دیگر">کلاس در ساعت‌های دیگر</label>
+      <label class="opt"><input type="checkbox" name="student_requests" value="پرداخت قسطی یا راحت‌تر">پرداخت قسطی یا راحت‌تر</label>
+      <label class="opt"><input type="checkbox" name="student_requests" value="محتوای مخصوص شرایط خاص">محتوای مخصوص بارداری، آسیب یا سالمندی</label>
+      <label class="opt"><input type="checkbox" name="student_requests" value="اپلیکیشن">اپلیکیشن یا جایی که همه‌چیز یک‌جا باشد</label>
+      <label class="f">موارد دیگر<input type="text" name="student_requests_other"></label>
+    </fieldset>
+
+    <h2>درباره‌ی کار شما</h2>
+
+    <fieldset>
+      <legend><label for="online_share">۶. چه سهمی از درآمد تدریس شما از کار آنلاین است؟</label></legend>
+      <select id="online_share" name="online_share">
+        <option value="">انتخاب کنید</option>
+        <option>کار آنلاین ندارم</option>
+        <option>کمتر از یک‌چهارم</option>
+        <option>یک‌چهارم تا نصف</option>
+        <option>بیشتر از نصف</option>
+      </select>
     </fieldset>
 
     <fieldset>
@@ -108,12 +164,24 @@ button:disabled{background:#8f959b;cursor:default}
     </fieldset>
 
     <fieldset>
-      <legend><label for="tools">۸. در حال حاضر برای چه ابزار یا خدماتی هزینه پرداخت می‌کنید؟</label> <span class="hint">مانند اسکای‌روم، طراحی سایت، ادمین، فیلمبردار و…</span></legend>
+      <legend>۸. اگر ابزاری کارهای جانبی تدریس را برایتان انجام دهد، دوست دارید اول کدام کار را از دوشتان بردارد؟</legend>
+      <label class="opt"><input type="radio" name="first_task" value="دریافت پول و پیگیری پرداخت">دریافت پول و پیگیری پرداخت</label>
+      <label class="opt"><input type="radio" name="first_task" value="ثبت‌نام و مدیریت ظرفیت">ثبت‌نام و مدیریت ظرفیت</label>
+      <label class="opt"><input type="radio" name="first_task" value="ارسال لینک و ویدیو">ارسال لینک و ویدیو به شاگردان</label>
+      <label class="opt"><input type="radio" name="first_task" value="محافظت از ویدیوها">محافظت از ویدیوها در برابر کپی</label>
+      <label class="opt"><input type="radio" name="first_task" value="یادآوری و حضور و غیاب">یادآوری جلسه‌ها و حضور و غیاب</label>
+      <label class="opt"><input type="radio" name="first_task" value="پاسخ به سوال‌ها">مدیریت سوال‌های شاگردان</label>
+      <label class="opt"><input type="radio" name="first_task" value="پیدا کردن شاگرد جدید">پیدا کردن شاگرد جدید</label>
+      <label class="opt"><input type="radio" name="first_task" value="گزارش درآمد">گزارش درآمد و حساب‌وکتاب</label>
+    </fieldset>
+
+    <fieldset>
+      <legend><label for="tools">۹. در حال حاضر برای چه ابزار یا خدماتی هزینه پرداخت می‌کنید؟</label> <span class="hint">مانند اسکای‌روم، طراحی سایت، ادمین، فیلمبردار و…</span></legend>
       <input id="tools" type="text" name="tools">
     </fieldset>
 
     <fieldset>
-      <legend>۹. تمایل دارید در یک تماس ۲۰ دقیقه‌ای، نمونه‌ی اولیه‌ی ابزار را به شما نشان دهیم؟</legend>
+      <legend>۱۰. تمایل دارید در یک تماس ۲۰ دقیقه‌ای، نمونه‌ی اولیه‌ی ابزار را به شما نشان دهیم؟</legend>
       <label class="opt"><input type="radio" name="call" value="بله">بله، با کمال میل</label>
       <label class="opt"><input type="radio" name="call" value="شاید بعداً">شاید بعداً</label>
       <label class="opt"><input type="radio" name="call" value="نه">خیر</label>
@@ -130,12 +198,215 @@ button:disabled{background:#8f959b;cursor:default}
 // Apps Script web app URL (see apps-script/Code.gs in the repo).
 var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxTFYrsHAcvi7PUrcenBqhjAP_2gWYxLXwDdFQdXKF2zuBnNJsyiQeXUKcvgG3_7173/exec';
 
+var STATUS = [
+  { value: 'الان', label: 'الان انجام می‌دهم' },
+  { value: 'قبلاً', label: 'قبلاً، الان نه' },
+  { value: 'نداشته‌ام', label: 'تجربه نکرده‌ام' }
+];
+
+// Each teaching method gets its own problems, since each one fails in its own way.
+var MODES = [
+  {
+    key: 'inperson', short: 'حضوری', title: 'کلاس حضوری', desc: 'باشگاه، استودیو، پارک یا منزل',
+    problems: [
+      'اجاره‌ی بالای سالن یا سهم زیاد باشگاه',
+      'ظرفیت محدود و سقف درآمد',
+      'غیبت و کنسلی شاگردها',
+      'هماهنگی ساعت و جلسه‌های جبرانی',
+      'پیگیری شهریه و تمدید ترم',
+      'محدود بودن به یک شهر یا منطقه',
+      'پیدا کردن شاگرد جدید'
+    ]
+  },
+  {
+    key: 'live', short: 'آنلاین زنده', title: 'کلاس آنلاین زنده', desc: 'اسکای‌روم، گوگل‌میت، لایو اینستاگرام، تماس تصویری',
+    extra: { key: 'live_tools', label: 'با چه ابزاری برگزار می‌کنید یا می‌کردید؟', options: ['اسکای‌روم', 'گوگل‌میت', 'لایو اینستاگرام', 'تماس تصویری واتساپ یا تلگرام', 'زوم', 'ادوبی کانکت یا بیگ‌بلوباتن'] },
+    problems: [
+      'قطعی یا کیفیت پایین اینترنت',
+      'فرم بدن شاگرد دیده نمی‌شود و اصلاح حرکت سخت است',
+      'فیلتر شدن یا محدودیت ابزارها',
+      'هزینه‌ی سرویس کلاس آنلاین',
+      'پخش شدن لینک و ورود افراد ثبت‌نام‌نکرده',
+      'غیبت شاگردها و درخواست فایل ضبط‌شده',
+      'دریافت پول و چک کردن رسیدها',
+      'انرژی و ارتباط کمتر نسبت به کلاس حضوری'
+    ]
+  },
+  {
+    key: 'recorded', short: 'ویدیو ضبط‌شده', title: 'ویدیو یا پکیج ضبط‌شده', desc: 'دوره‌ی آماده که شاگرد هر وقت خواست می‌بیند',
+    extra: { key: 'rec_delivery', label: 'ویدیوها را چطور به دست شاگرد می‌رسانید یا می‌رساندید؟', options: ['کانال یا گروه تلگرام', 'گوگل‌درایو یا لینک دانلود', 'اسپات‌پلیر یا پلیر امن', 'سایت شخصی', 'پلتفرم آموزشی', 'دایرکت یا واتساپ'] },
+    problems: [
+      'پخش شدن ویدیوها و کپی غیرمجاز',
+      'فروش کم یا درآمد کمتر از انتظار',
+      'شاگرد ویدیو را می‌خرد ولی تمرین نمی‌کند',
+      'بازخورد و اصلاح حرکت ممکن نیست',
+      'هزینه و زحمت فیلمبرداری و تدوین',
+      'مشکل در ارسال ویدیو (حجم، فیلتر، لینک)',
+      'سوال‌های زیاد در دایرکت بعد از خرید',
+      'سخت بودن قیمت‌گذاری',
+      'ارتباط با شاگرد بعد از خرید قطع می‌شود'
+    ]
+  },
+  {
+    key: 'channel', short: 'کانال پولی', title: 'کانال یا پیج خصوصی پولی', desc: 'مثل کانال تلگرام یا Close Friends اینستاگرام با حق عضویت',
+    problems: [
+      'اضافه و حذف دستی اعضا',
+      'کارت‌به‌کارت و پیگیری تمدید ماهانه',
+      'پخش شدن محتوا',
+      'نگرانی از مسدود یا فیلتر شدن پلتفرم',
+      'محدودیت‌های اینستاگرام یا تلگرام برای فروش',
+      'گم شدن جلسه‌ها لابه‌لای پست‌ها و پیام‌ها'
+    ]
+  },
+  {
+    key: 'website', short: 'سایت', title: 'سایت شخصی', desc: 'سایتی که دوره یا کلاس را در آن می‌فروشید',
+    problems: [
+      'هزینه‌ی طراحی و نگهداری سایت',
+      'بازدید و فروش کم',
+      'مشکلات درگاه پرداخت و اینماد',
+      'مشکلات فنی و نیاز به برنامه‌نویس',
+      'امنیت ویدیوها و پخش شدن آن‌ها',
+      'وقت‌گیر بودن به‌روزرسانی محتوا'
+    ]
+  },
+  {
+    key: 'platform', short: 'پلتفرم', title: 'پلتفرم آموزشی', desc: 'مثل مکتب‌خونه یا اپلیکیشن‌های ورزشی',
+    extra: { key: 'platform_name', label: 'کدام پلتفرم؟', text: true },
+    problems: [
+      'کمیسیون بالا',
+      'دسترسی نداشتن به اطلاعات تماس شاگردها',
+      'کنترل کم روی قیمت و تخفیف',
+      'دیر رسیدن تسویه',
+      'دیده نشدن بین دوره‌های دیگر',
+      'قوانین و محدودیت‌های محتوایی',
+      'ارتباط مستقیم نداشتن با شاگرد'
+    ]
+  }
+];
+
 (function () {
   var form = document.getElementById('survey');
+  var modesBox = document.getElementById('modes');
+  var detailsBox = document.getElementById('details');
+  var noOnline = document.getElementById('no-online');
   var msg = document.getElementById('msg');
   var btn = document.getElementById('send');
 
-  function show(kind, text) {
+  function el(tag, attrs, text) {
+    var e = document.createElement(tag);
+    for (var k in attrs || {}) e.setAttribute(k, attrs[k]);
+    if (text) e.textContent = text;
+    return e;
+  }
+
+  function option(type, name, value, label) {
+    var l = el('label', { class: 'opt' });
+    l.appendChild(el('input', { type: type, name: name, value: value }));
+    l.appendChild(document.createTextNode(label));
+    return l;
+  }
+
+  function field(label, control) {
+    var l = el('label', { class: 'f' }, label);
+    l.appendChild(control);
+    return l;
+  }
+
+  // Status question per method
+  MODES.forEach(function (m) {
+    var row = el('div', { class: 'mode', id: 'row_' + m.key });
+    var head = el('div');
+    head.appendChild(el('b', null, m.title));
+    head.appendChild(el('div', { class: 'hint' }, m.desc));
+    row.appendChild(head);
+    var pills = el('div', { class: 'pills', role: 'radiogroup', 'aria-label': m.title });
+    STATUS.forEach(function (s) {
+      var l = el('label');
+      l.appendChild(el('input', { type: 'radio', name: 'm_' + m.key, value: s.value }));
+      l.appendChild(document.createTextNode(s.label));
+      pills.appendChild(l);
+    });
+    row.appendChild(pills);
+    modesBox.appendChild(row);
+  });
+
+  // Follow-up block per method, shown only when the coach has tried it
+  MODES.forEach(function (m) {
+    var fs = el('fieldset', { class: 'detail', id: 'd_' + m.key, hidden: '', disabled: '' });
+    fs.appendChild(el('legend', null, 'تجربه‌ی شما با ' + m.title));
+    if (m.extra) {
+      if (m.extra.text) {
+        fs.appendChild(field(m.extra.label, el('input', { type: 'text', name: m.extra.key })));
+      } else {
+        fs.appendChild(el('div', { class: 'sub' }, m.extra.label));
+        m.extra.options.forEach(function (o) { fs.appendChild(option('checkbox', m.extra.key, o, o)); });
+        fs.appendChild(field('ابزار دیگر', el('input', { type: 'text', name: m.extra.key + '_other' })));
+      }
+    }
+    var sub = el('div', { class: 'sub' }, 'با چه مشکلاتی روبه‌رو شده‌اید؟ ');
+    sub.appendChild(el('span', { class: 'hint' }, 'هر چند مورد'));
+    fs.appendChild(sub);
+    m.problems.forEach(function (p) { fs.appendChild(option('checkbox', 'p_' + m.key, p, p)); });
+    fs.appendChild(field('مشکل دیگر', el('input', { type: 'text', name: 'p_' + m.key + '_other' })));
+    fs.appendChild(field('کدام مشکل بیشتر از همه اذیتتان کرده و چه چیزی می‌توانست آن را حل کند؟', el('textarea', { name: 'big_' + m.key })));
+    var stop = el('fieldset', { id: 's_' + m.key, hidden: '', disabled: '', style: 'border:0;padding:0' });
+    stop.appendChild(field('چرا این روش را کنار گذاشتید؟', el('textarea', { name: 'stop_' + m.key })));
+    fs.appendChild(stop);
+    detailsBox.appendChild(fs);
+  });
+
+  function show(node, on) {
+    node.hidden = !on;
+    node.disabled = !on;
+  }
+
+  function statusOf(key) {
+    var c = form.querySelector('input[name="m_' + key + '"]:checked');
+    return c ? c.value : '';
+  }
+
+  function update() {
+    var answeredOnline = 0, triedOnline = 0;
+    MODES.forEach(function (m) {
+      var s = statusOf(m.key);
+      show(document.getElementById('d_' + m.key), s === 'الان' || s === 'قبلاً');
+      show(document.getElementById('s_' + m.key), s === 'قبلاً');
+      if (m.key !== 'inperson' && s) {
+        answeredOnline++;
+        if (s !== 'نداشته‌ام') triedOnline++;
+      }
+      if (s) document.getElementById('row_' + m.key).classList.remove('missing');
+    });
+    show(noOnline, answeredOnline === MODES.length - 1 && triedOnline === 0);
+  }
+  form.addEventListener('change', update);
+
+  // Column titles for the sheet, in the order the columns should appear
+  function labels() {
+    var L = [
+      ['name', 'نام'], ['phone', 'موبایل'], ['instagram', 'اینستاگرام'], ['city', 'شهر'], ['years', 'سابقه‌ی تدریس']
+    ];
+    MODES.forEach(function (m) { L.push(['m_' + m.key, m.short + ': وضعیت']); });
+    MODES.forEach(function (m) {
+      if (m.extra) {
+        L.push([m.extra.key, m.short + ': ' + (m.extra.text ? 'نام پلتفرم' : 'ابزار')]);
+        if (!m.extra.text) L.push([m.extra.key + '_other', m.short + ': ابزار دیگر']);
+      }
+      L.push(['p_' + m.key, m.short + ': مشکلات']);
+      L.push(['p_' + m.key + '_other', m.short + ': مشکل دیگر']);
+      L.push(['big_' + m.key, m.short + ': بزرگ‌ترین مشکل و راه‌حل']);
+      L.push(['stop_' + m.key, m.short + ': دلیل کنار گذاشتن']);
+    });
+    return L.concat([
+      ['no_online_why', 'بدون آنلاین: موانع'], ['no_online_start', 'بدون آنلاین: تمایل به شروع'], ['no_online_need', 'بدون آنلاین: کمک لازم'],
+      ['needs', 'هدف شاگردها'], ['needs_other', 'هدف دیگر'], ['completion', 'تکمیل دوره از ۱۰ نفر'], ['medical', 'شاگرد با شرایط جسمی'],
+      ['student_requests', 'خواسته‌های شاگردها'], ['student_requests_other', 'خواسته‌ی دیگر'],
+      ['online_share', 'سهم درآمد آنلاین'], ['dm_time', 'وقت روزانه برای پیام‌ها'], ['first_task', 'اولویت ابزار'],
+      ['tools', 'ابزارهای پولی'], ['call', 'تماس ۲۰ دقیقه‌ای'], ['call_time', 'زمان تماس']
+    ]);
+  }
+
+  function say(kind, text) {
     msg.className = 'msg ' + kind;
     msg.textContent = text;
     msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -143,31 +414,36 @@ var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxTFYrsHAcvi7PUrcenBqhjA
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var name = form.name.value.trim();
-    var phone = form.phone.value.trim();
-    var ig = form.instagram.value.trim();
-    if (!name || !phone || !ig) {
-      show('err', 'لطفاً نام، شماره موبایل و آیدی پیج را وارد کنید.');
+    if (!form.name.value.trim() || !form.phone.value.trim() || !form.instagram.value.trim()) {
+      say('err', 'لطفاً نام، شماره موبایل و آیدی پیج را وارد کنید.');
+      return;
+    }
+    var missing = MODES.filter(function (m) { return !statusOf(m.key); });
+    if (missing.length) {
+      missing.forEach(function (m) { document.getElementById('row_' + m.key).classList.add('missing'); });
+      say('err', 'لطفاً در سوال ۱ برای همه‌ی روش‌ها یک گزینه انتخاب کنید (' + missing.map(function (m) { return m.title; }).join('، ') + ').');
       return;
     }
     if (!ENDPOINT) {
-      show('err', 'فرم هنوز به جدول ذخیره‌سازی وصل نشده است.');
+      say('err', 'فرم هنوز به جدول ذخیره‌سازی وصل نشده است.');
       return;
     }
+    var data = new URLSearchParams(new FormData(form));
+    data.set('_labels', JSON.stringify(labels()));
     btn.disabled = true;
     btn.textContent = 'در حال ارسال…';
-    fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) })
+    fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
       .then(function () {
         form.reset();
         form.style.display = 'none';
         msg.parentNode.removeChild(msg);
         form.parentNode.appendChild(msg);
-        show('ok', 'ممنون از وقتی که گذاشتید، پاسختان ثبت شد. اگر تمایل به گفتگو داشتید، به‌زودی برای هماهنگی پیام می‌دهیم.');
+        say('ok', 'ممنون از وقتی که گذاشتید، پاسختان ثبت شد. اگر تمایل به گفتگو داشتید، به‌زودی برای هماهنگی پیام می‌دهیم.');
       })
       .catch(function () {
         btn.disabled = false;
         btn.textContent = 'ثبت پاسخ‌ها';
-        show('err', 'ارسال انجام نشد. لطفاً اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.');
+        say('err', 'ارسال انجام نشد. لطفاً اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.');
       });
   });
 })();
